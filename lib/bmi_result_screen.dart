@@ -1,15 +1,14 @@
+import 'package:bmi_application/widgets/geneder_selection_widget.dart';
 import 'package:flutter/material.dart';
 
 class BmiResultScreen extends StatelessWidget {
-  final bool male;
-  final bool female;
+  final Gender gender;
   final int age;
   final double result;
   BmiResultScreen({
     required this.age,
-    required this.male,
+    required this.gender,
     required this.result,
-    required this.female,
   });
 
   @override
@@ -52,7 +51,7 @@ class BmiResultScreen extends StatelessWidget {
                       width: 20,
                     ),
                     Text(
-                      '${male ? 'Male' : female ? 'Female' : 'Not Selected'}',
+                      '${gender == Gender.male ? 'Male' : gender == Gender.female ? 'Female' : 'Not Selected'}',
                       style: TextStyle(
                         fontSize: 30,
                         color: Colors.white,
